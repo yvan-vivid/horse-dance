@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "horse-dance"
+version = "0.1.0"
+description = ""
+authors = ["yvan-vivid <yvan-vivid@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+mypy = "^0.782"
+python-magic = "^0.4.18"
+python-slugify = "^4.0.1"
+pylint = "^2.6.0"
+pyyaml = "^5.3.1"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pylint = "^2.6.0"
+ipython = "^7.18.1"
+neovim = "^0.3.1"
+pytest-cov = "^2.10.1"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
