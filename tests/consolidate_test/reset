@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+declare -r \
+  d1="./tree" \
+  d2="./tree/a" \
+  d3="./tree/a/b" \
+  d4="./tree/a/b/c" \
+  d5="./tree/a/f" \
+  d6="./tree/b" \
+  d7="./tree/b/c" \
+  d8="./tree/b/e"
+
+declare -r \
+  f1="sources/correct.avi" \
+  f2="sources/correct.flv" \
+  f3="sources/wrong-ext.webm" \
+  f4="sources/audio.m4a" \
+  f5="sources/text.html"
+
+cp $f1 $d1/
+cp $f1 $d3/
+cp $f1 $d5/
+cp $f1 $d8/
+
+cp $f2 $d1/
+cp $f2 $d2/
+cp $f2 $d3/
+cp $f2 $d7/
+
+cp $f3 $d3/
+cp $f3 $d6/
+cp $f3 $d7/
+
+cp $f4 $d3/
+cp $f5 $d6/
+
+rm target/*

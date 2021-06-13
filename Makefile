@@ -1,12 +1,15 @@
-.PHONY: all check test
+.PHONY: all check test clean
 
-all: check test clean
+all: check test
 
-check:
+check: | .venv
 	poetry run mypy src
 
-test:
+test: | .venv
 	poetry run pytest --cov=src --cov-report term-missing
+
+.venv:
+	poetry install
 
 clean:
 	find . -type d -name "__pycache__" -exec rm -rf {} +
